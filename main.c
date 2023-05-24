@@ -12,11 +12,14 @@ void run(void);
  */
 int main(int argc, char **argv)
 {
-		global.line_num = 1;
+	global.line_num = 1;
 	if (argc != 2)
-		print_error(MONTY_FILE_ERR);
-	global.file = fopen(argv[1], "r");
+	{
+		fprintf(stderr, "%s\n", MONTY_FILE_ERR);
+		exit(EXIT_FAILURE);
+	}
 
+	global.file = fopen(argv[1], "r");
 	if (global.file == NULL)
 		print_error_file(MONTY_FILE_NOT_OPEN, argv[1]);
 
@@ -30,8 +33,7 @@ int main(int argc, char **argv)
 void run(void)
 {
 	size_t len = 0;
-	int read;
-	char *opcode, *data;
+	char *opcode;
 
 	while (getline(&global.line_ptr, &len, global.file) != -1)
 	{
@@ -67,5 +69,5 @@ void exec_op(char *opcode)
 			return;
 		}
 	}
-	print_error_line("usage: push integer", global.line_num);
+	print_error_opcode("unknown instruction", opcode, global.line_num);
 }
