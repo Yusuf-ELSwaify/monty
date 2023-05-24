@@ -11,10 +11,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	stack_t *p = *stack;
 
 	if (stack == NULL || *stack == NULL)
-	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		print_error_line("can't pint, stack empty", line_number);
 	while (p->next)
 		p = p->next;
 	printf("%d\n", p->n);
@@ -31,10 +28,8 @@ void pop(stack_t **stack, unsigned int line_number)
 	stack_t *p = *stack;
 
 	if (stack == NULL || *stack == NULL)
-	{
-		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		print_error_line("can't pop an empty stack", line_number);
+
 	while (p->next)
 		p = p->next;
 	if (p->prev)

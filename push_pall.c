@@ -1,11 +1,10 @@
 #include "monty.h"
 
 /**
- * isdigit - checks if a string is a digit
+ * _isdigit - checks if a string is a digit
  * @arg: string to check
  * Return: 1 if true, 0 if false
  */
-
 int _isdigit(char *arg)
 {
 	int i = 0;
@@ -32,25 +31,19 @@ int _isdigit(char *arg)
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node, *p = *stack;
-	char *arg = strtok(NULL, " \n\t");
+	char *arg = strtok(NULL, ESCAPES);
 
 	if (arg == NULL || _isdigit(arg) == 0)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		print_error_line("usage: push integer", line_number);
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
+		print_error("Error: malloc failed");
 	new_node->n = atoi(arg);
 	new_node->next = NULL;
 	if (p)
 	{
 		while (p->next)
-		p = p->next;
+			p = p->next;
 		new_node->prev = p;
 		p->next = new_node;
 	}
