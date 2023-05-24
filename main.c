@@ -60,6 +60,8 @@ void exec_op(char *opcode)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}};
 	for (i = 0; op_funcs[i].opcode; i++)
 	{
