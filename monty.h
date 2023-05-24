@@ -61,7 +61,7 @@ typedef struct global_s
 
 extern global_t global;
 
-void free_all();
+void free_all(void);
 void print_error(char *err);
 void print_error_file(char *err, char *file_name);
 void print_error_line(char *err, unsigned int line_num);
