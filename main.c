@@ -37,8 +37,8 @@ void run(void)
 
 	while (getline(&global.line_ptr, &len, global.file) != -1)
 	{
-		opcode = strtok(global.line_ptr, SPACES);
-		if (*opcode != '#' && *opcode != '\n')
+		opcode = strtok(global.line_ptr, ESCAPES);
+		if (opcode != NULL && *opcode != '#')
 			exec_op(opcode);
 
 		global.line_num++;
