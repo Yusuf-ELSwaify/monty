@@ -8,15 +8,15 @@
 
 void mul(stack_t **stack, unsigned int line_number)
 {
-        stack_t *p = *stack;
+	stack_t *p = *stack;
 
-        if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-                print_error_line("can't mul, stack too short", line_number);
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		print_error_line("can't mul, stack too short", line_number);
 
-        while (p->next)
-                p = p->next;
-        p->prev->n *= p->n;
-        pop(stack, line_number);
+	while (p->next)
+		p = p->next;
+	p->prev->n *= p->n;
+	pop(stack, line_number);
 }
 
 /**
