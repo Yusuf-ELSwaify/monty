@@ -63,8 +63,6 @@ void exec_op(char *opcode)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", _div},
-		{"mul", mul},
-		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
