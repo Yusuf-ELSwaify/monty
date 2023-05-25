@@ -15,7 +15,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 	while (p->next)
 		p = p->next;
-	p->prev->n += p->n;
+	p->prev->n -= p->n;
 	pop(stack, line_number);
 }
 
