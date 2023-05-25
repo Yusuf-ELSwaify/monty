@@ -15,8 +15,10 @@ void rotl(stack_t **stack, UNUSED unsigned int line_number)
 	while (p->next)
 		p = p->next;
 
+	printf("stack: %d  p: %d\n", (*stack)->n, p->n);
 	(*stack)->prev = p;
 	p->next = (*stack);
 	p->prev->next = NULL;
 	p->prev = NULL;
+	(*stack) = (*stack)->prev;
 }
