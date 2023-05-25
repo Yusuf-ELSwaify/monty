@@ -11,14 +11,13 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 		print_error_line("can't pchar, stack empty", line_number);
-	
+
 	while (p->next)
 		p = p->next;
 	if (p->n >= 0 && p->n < 128)
 		printf("%c\n", p->n);
 	else
 		print_error_line("can't pchar, value out of range", line_number);
-	
 }
 /**
  * pstr - prints the string from the top of the stack, followed by a new line.

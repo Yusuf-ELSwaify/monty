@@ -62,6 +62,7 @@ void exec_op(char *opcode)
 		{"nop", nop},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}};
 	for (i = 0; op_funcs[i].opcode; i++)
 	{
