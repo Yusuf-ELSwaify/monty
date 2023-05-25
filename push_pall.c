@@ -42,6 +42,14 @@ void push(stack_t **stack, unsigned int line_number)
 	new_node->next = NULL;
 	if (p)
 	{
+		if (global.is_stack == 0)/* if queue*/
+		{
+			new_node->next = p;
+			p->prev = new_node;
+			new_node->prev = NULL;
+			(*stack) = new_node;
+			return;
+		}
 		while (p->next)
 			p = p->next;
 		new_node->prev = p;

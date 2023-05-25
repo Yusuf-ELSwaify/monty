@@ -50,6 +50,7 @@ typedef struct instruction_s
  * @line_ptr: line we interpret
  * @line_num: the current line to read
  * @list: the list we build
+ * @is_stack: 1 if stack 0 if queue
  */
 typedef struct global_s
 {
@@ -57,6 +58,7 @@ typedef struct global_s
 	char *line_ptr;
 	unsigned int line_num;
 	stack_t *list;
+	int is_stack;
 } global_t;
 
 extern global_t global;
@@ -78,5 +80,7 @@ void pchar(stack_t **, unsigned int);
 void pstr(stack_t **, unsigned int);
 void rotl(stack_t **, unsigned int);
 void rotr(stack_t **, unsigned int);
+void turn_queue(stack_t **, unsigned int);
+void turn_stack(stack_t **, unsigned int);
 
 #endif /* MONTY__H */

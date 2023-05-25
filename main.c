@@ -13,6 +13,7 @@ void run(void);
 int main(int argc, char **argv)
 {
 	global.line_num = 1;
+	global.is_stack = 1;
 	if (argc != 2)
 	{
 		fprintf(stderr, "%s\n", MONTY_FILE_ERR);
@@ -64,6 +65,8 @@ void exec_op(char *opcode)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"queue", turn_queue},
+		{"stack", turn_stack},
 		{NULL, NULL}};
 	for (i = 0; op_funcs[i].opcode; i++)
 	{
