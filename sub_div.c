@@ -11,7 +11,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	stack_t *p = *stack;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		print_error_line("can't add, stack too short", line_number);
+		print_error_line("can't sub, stack too short", line_number);
 
 	while (p->next)
 		p = p->next;
