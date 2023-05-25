@@ -31,13 +31,16 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 	if (stack == NULL || *stack == NULL)
+	{
+		printf("\n");
 		return;
+	}
 	while (p->next)
 		p = p->next;
-	while (p && p->n > 0 && p->n < 128)
+	while (p != NULL && p->n != 0 && p->n >= 0 && p->n < 128)
 	{
-		putchar(p->n);
+		printf("%c", p->n);
 		p = p->prev;
 	}
-	putchar('\n');
+	printf("\n");
 }
