@@ -1,6 +1,6 @@
 # Monty Interpreter
 
-A scripting language interpreter built in the C language written as part of the [low-level programming](https://github.com/Yusuf-ELSwaify/alx-higher_level_programming) in Software Engineering track at ALX.
+A scripting language interpreter built in the C language written as part of the [low-level programming](https://github.com/Yusuf-ELSwaify/alx-low_level_programming) in Software Engineering track at ALX.
 
 ## 0x19. C - Stacks, Queues - LIFO, FIFO
 
